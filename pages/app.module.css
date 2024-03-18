@@ -1,0 +1,39 @@
+.text_input {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  margin: 10px 12px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #dcdcfe;
+  border-radius: 12px;
+  /* padding: 12px 15px; */
+  font-size: large;
+}
+.label {
+  font-weight: bold;
+  margin: 10px;
+  color: "#fffff";
+}
+.app {
+  background: #dcdcfe;
+}
+.editor {
+  background: "#fffff";
+}
+.saveBtn {
+  background: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 12px;
+  font-size: large;
+}
+.saveBtn:hover {
+  opacity: 0.8;
+}
+.saveBtn:active {
+  background-color: #3e8e41;
+}

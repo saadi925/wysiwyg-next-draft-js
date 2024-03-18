@@ -1,0 +1,41 @@
+{
+  "name": "draft-js-rte",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "pkgs": "yarn add @emotion/babel-preset-css-prop@11.2.0 @emotion/react@11.5.0 @emotion/styled@11.3.0 @fortawesome/fontawesome-svg-core@1.2.32 @fortawesome/free-solid-svg-icons@5.15.1 @fortawesome/react-fontawesome@0.1.16 core-js@3.19.0 draft-js@0.11.7 draft-js-export-html@1.4.1 draft-js-import-html@1.4.1 form-linker@1.2.0 lodash@4.17.21 next@12.0.5 off-color@2.0.0 prismjs@1.25.0 react@17.0.2 react-dom@17.0.2 react-dropzone@4.2.11 react-spring@9.3.0 regenerator-runtime@0.13.9 simple-translator@0.2.5 use-onclickoutside@0.4.0",
+    "export": "next build && next export",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@fortawesome/fontawesome-svg-core": "1.2.32",
+    "@fortawesome/free-solid-svg-icons": "5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "@headlessui/react": "^1.7.18",
+    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^12.0.1",
+    "axios": "^1.6.8",
+    "core-js": "^3.19.0",
+    "draft-js": "0.11.7",
+    "draft-js-export-html": "1.4.1",
+    "draft-js-import-html": "1.4.1",
+    "form-linker": "1.2.0",
+    "lodash": "^4.17.21",
+    "next": "^12.0.5",
+    "off-color": "2.0.0",
+    "prismjs": "^1.25.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-dropzone": "4.2.11",
+    "react-spring": "^9.3.0",
+    "regenerator-runtime": "^0.13.9",
+    "simple-translator": "0.2.5",
+    "use-onclickoutside": "^0.4.0"
+  }
+}
