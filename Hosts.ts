@@ -1,2 +1,2 @@
-export const HOST = "http://service.dgspark.com";
-export const redirect = "http://cms.dgspark.com/blogs";
+export const HOST = "https://dgspark.site/api";
+export const redirect = "https://dgspark.site/cms";
