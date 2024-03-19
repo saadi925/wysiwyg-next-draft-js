@@ -13,8 +13,18 @@ export default function App() {
 }
 const Home = () => {
   const nextRouter = useRouter();
-
+  let message = "Login first";
+  let token;
+  if (typeof window !== "undefined") {
+    token = localStorage.getItem("token");
+  }
+  console.log(token);
+  const auth = !!token;
   const [categories, setCategories] = useState([]); // [1]
+  if (auth) {
+    message = "Loggged In";
+  }
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -26,10 +36,10 @@ const Home = () => {
   const formLinker = useRef(
     new FormLinker({
       data: {
-        editor: "Write something here",
+        content: "Write something here",
       },
       schema: {
-        editor: "string",
+        content: "string",
       },
     })
   );
@@ -47,10 +57,25 @@ const Home = () => {
   const onHandleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  const validateData = (data) => {
+    if (
+      !data.title ||
+      !data.description ||
+      !data.thumbnail ||
+      !data.categoryId
+    ) {
+      return false;
+    }
+    return true;
+  };
   const handleSave = async (data) => {
     try {
+      const ok = validateData(data);
+      if (!ok) {
+        setError("All fields are required");
+        return;
+      }
       const token = localStorage.getItem("token");
-      console.log(token);
       const response = await fetch(`${HOST}/posts`, {
         method: "POST",
         headers: {
@@ -73,7 +98,14 @@ const Home = () => {
     setFormData({ ...formData, thumbnail: url });
     setThumbnailPreview(url);
   };
-
+  useEffect(() => {
+    if (
+      formLinker.current &&
+      formLinker.current.data.content !== formData.content
+    ) {
+      setFormData({ ...formData, content: formLinker.current.data.content });
+    }
+  }, [formLinker.current.data.content]);
   return (
     <div className={styles.app}>
       <Head>
@@ -88,6 +120,7 @@ const Home = () => {
           justifyContent: "center",
         }}
       >
+        <h1 className="">{message}</h1>
         <div
           css={{
             width: 1000,
@@ -178,7 +211,7 @@ const Home = () => {
             >
               <div
                 dangerouslySetInnerHTML={{
-                  __html: formLinker.current.data.editor,
+                  __html: formLinker.current.data.content,
                 }}
               ></div>
             </div>

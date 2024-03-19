@@ -3,7 +3,6 @@ import React from "react";
 
 const index = () => {
   const router = useRouter();
-
   const r = {
     login: "auth/login",
     create: "create/",

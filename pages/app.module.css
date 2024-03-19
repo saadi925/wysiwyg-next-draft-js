@@ -1,39 +1,50 @@
 .text_input {
-  border: 1px solid #ccc;
-  padding: 8px 12px;
-  margin: 10px 12px;
+  border: 2px solid #ccc; /* Increased border thickness for better visibility */
+  padding: 10px 15px; /* Increased padding for better text spacing */
+  margin: 10px 0; /* Adjusted margin for better alignment */
   width: 100%;
   box-sizing: border-box;
-  background: #dcdcfe;
-  border-radius: 12px;
-  /* padding: 12px 15px; */
-  font-size: large;
+  border-radius: 15px; /* Increased border radius for a more rounded look */
+  font-size: 18px; /* Specified font size in px for more control */
 }
+
 .label {
   font-weight: bold;
-  margin: 10px;
-  color: "#fffff";
-}
-.app {
-  background: #dcdcfe;
+  margin: 4px 0; /* Adjusted margin for better alignment */
+  color: #ffffff; /* Corrected color value */
 }
 .editor {
-  background: "#fffff";
+  background: #fff;
+  color: #000;
+  border-radius: 12px;
+  padding: 10px; /* Added padding for better inner spacing */
 }
+.app {
+  background: #1a202c;
+  color: #fff;
+  padding: 20px; /* Added padding for better inner spacing */
+}
+
 .saveBtn {
   background: #4caf50;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 15px 25px; /* Increased padding for better button size */
+  margin: 10px 0; /* Adjusted margin for better alignment */
   border: none;
   cursor: pointer;
   width: 100%;
-  border-radius: 12px;
-  font-size: large;
+  border-radius: 15px; /* Increased border radius for a more rounded look */
+  font-size: 18px; /* Specified font size in px for more control */
+  transition: opacity 0.3s ease; /* Added transition for a smoother hover effect */
 }
+
 .saveBtn:hover {
   opacity: 0.8;
 }
+
 .saveBtn:active {
   background-color: #3e8e41;
+  transform: scale(
+    0.98
+  ); /* Added scale transformation for a "button press" effect */
 }

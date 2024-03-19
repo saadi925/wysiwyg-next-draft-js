@@ -1,3 +1,7 @@
+.full {
+  background: #1a202c;
+  color: #fff;
+}
 .selectableContainer {
   margin-bottom: 1rem;
 }
