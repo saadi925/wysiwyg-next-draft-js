@@ -18,7 +18,6 @@ const Home = () => {
   if (typeof window !== "undefined") {
     token = localStorage.getItem("token");
   }
-  console.log(token);
   const auth = !!token;
   const [categories, setCategories] = useState([]); // [1]
   if (auth) {
@@ -45,7 +44,7 @@ const Home = () => {
   );
   useEffect(() => {
     const fetchCategories = async () => {
-      const res = await fetch("http://localhost:3333/categories");
+      const res = await fetch(`${HOST}/categories`);
       const data = await res.json();
       setCategories(data);
     };
@@ -88,7 +87,6 @@ const Home = () => {
       if (res.ok) {
         nextRouter.isReady && nextRouter.push(process.env.redirect || redirect);
       }
-      console.log(res);
     } catch (error) {}
   };
   const [thumbnailPreview, setThumbnailPreview] = useState("");
@@ -165,7 +163,7 @@ const Home = () => {
             placeholder="Image URL"
             className={styles.text_input}
           />
-          {thumbnailPreview && ( // Render the thumbnail preview if a URL is provided
+          {thumbnailPreview && (
             <div>
               <h3>Thumbnail Preview:</h3>
               <img
@@ -175,12 +173,15 @@ const Home = () => {
               />
             </div>
           )}
-          <Selectable
-            value={formData.categoryId}
-            setValue={handleCategoryChange}
-            onChange={onHandleChange}
-            categories={categories}
-          />
+          <div className={styles.categoryBox}>
+            <Selectable
+              value={formData.categoryId}
+              setValue={handleCategoryChange}
+              onChange={onHandleChange}
+              categories={categories}
+            />
+          </div>
+          {error && <p style={{ fontSize: "24px", color: "red" }}>{error}</p>}
           <label htmlFor="content">Content</label>
           <div className={styles.editor}>
             <Field

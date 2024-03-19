@@ -1,2 +1,2 @@
-export const HOST = "http://localhost:3333";
-export const redirect = "http://localhost:5173/blogs";
+export const HOST = "http://service.dgspark.com";
+export const redirect = "http://cms.dgspark.com/blogs";
