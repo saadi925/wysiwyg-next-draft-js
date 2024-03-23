@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 const useAuthentication = () => {
   const [auth, setAuth] = useState(false);
-  const [Token, setToken] = useState(""); // [1]
-  if (typeof window !== "undefined") {
-    // Perform localStorage action
+  useEffect(() => {
     const token = localStorage.getItem("token");
-    setToken(token);
-    setAuth(!!token);
-  }
-
-  return auth;
+    if (token) {
+      setAuth(true);
+    }
+  }, [auth]);
+  return { auth };
 };
 
 export default useAuthentication;
